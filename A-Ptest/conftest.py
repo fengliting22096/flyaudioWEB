@@ -5,7 +5,7 @@ from PageObjects.Page_test.Home_Page import Home_Page_test
 
 @pytest.fixture(scope='class', autouse=True)
 def Start():
-    path = "d:/chromedriver.exe"
+    path = "./resources/chromedriver.exe"
     """定义全局浏览器驱动"""
     global driver
     driver = webdriver.Chrome(path)
@@ -20,6 +20,5 @@ def Start():
     driver.find_element_by_xpath('//settings-ui').send_keys(Keys.ENTER)
     driver.quit()
 
-# @pytest.fixture(scope="function", autouse=True)
-# def
+
 

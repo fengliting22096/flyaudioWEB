@@ -10,7 +10,17 @@ class Home_Page_test(BasePages):
         sleep(2)
         self.el_click(lookfor.icon)
         sleep(3)
-        self.el_click((lookfor.black))
+        print(self.get_text(lookfor.text))
+        self.el_click(lookfor.diyi)
         sleep(2)
+
+    def get_url(self):
+        self.url("https://www.w3school.com.cn/tiy/t.asp?f=js_alert")
+
+        self.driver.switch_to.frame("iframeResult")
+        self.el_click(lookfor.jc)
+        self.driver.switch_to.alert.accept()
+        sleep(3)
+
 
 

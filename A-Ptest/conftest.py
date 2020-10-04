@@ -11,7 +11,11 @@ def Start():
     driver = webdriver.Chrome(path)
     driver.maximize_window()
     print("开始")
+
+    driver.delete_all_cookies()
     driver.get("https://www.shicimingju.com")
+    text = driver.find_element_by_xpath('/html/body/div[3]/div[1]/div[1]/div[2]/h3/a').is_displayed()
+    print(text)
     intext = Home_Page_test(driver)
     yield (driver, intext)
     print("结束")
